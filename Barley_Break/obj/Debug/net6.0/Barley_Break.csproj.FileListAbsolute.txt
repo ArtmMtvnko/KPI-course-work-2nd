@@ -1,0 +1,15 @@
+D:\Microsoft Visual Studio\Projects\OP_2nd_Course\Course_work\Barley_Break\Barley_Break\bin\Debug\net6.0\Barley_Break.exe
+D:\Microsoft Visual Studio\Projects\OP_2nd_Course\Course_work\Barley_Break\Barley_Break\bin\Debug\net6.0\Barley_Break.deps.json
+D:\Microsoft Visual Studio\Projects\OP_2nd_Course\Course_work\Barley_Break\Barley_Break\bin\Debug\net6.0\Barley_Break.runtimeconfig.json
+D:\Microsoft Visual Studio\Projects\OP_2nd_Course\Course_work\Barley_Break\Barley_Break\bin\Debug\net6.0\Barley_Break.dll
+D:\Microsoft Visual Studio\Projects\OP_2nd_Course\Course_work\Barley_Break\Barley_Break\bin\Debug\net6.0\Barley_Break.pdb
+D:\Microsoft Visual Studio\Projects\OP_2nd_Course\Course_work\Barley_Break\Barley_Break\obj\Debug\net6.0\Barley_Break.csproj.AssemblyReference.cache
+D:\Microsoft Visual Studio\Projects\OP_2nd_Course\Course_work\Barley_Break\Barley_Break\obj\Debug\net6.0\Barley_Break.GeneratedMSBuildEditorConfig.editorconfig
+D:\Microsoft Visual Studio\Projects\OP_2nd_Course\Course_work\Barley_Break\Barley_Break\obj\Debug\net6.0\Barley_Break.AssemblyInfoInputs.cache
+D:\Microsoft Visual Studio\Projects\OP_2nd_Course\Course_work\Barley_Break\Barley_Break\obj\Debug\net6.0\Barley_Break.AssemblyInfo.cs
+D:\Microsoft Visual Studio\Projects\OP_2nd_Course\Course_work\Barley_Break\Barley_Break\obj\Debug\net6.0\Barley_Break.csproj.CoreCompileInputs.cache
+D:\Microsoft Visual Studio\Projects\OP_2nd_Course\Course_work\Barley_Break\Barley_Break\obj\Debug\net6.0\Barley_Break.dll
+D:\Microsoft Visual Studio\Projects\OP_2nd_Course\Course_work\Barley_Break\Barley_Break\obj\Debug\net6.0\refint\Barley_Break.dll
+D:\Microsoft Visual Studio\Projects\OP_2nd_Course\Course_work\Barley_Break\Barley_Break\obj\Debug\net6.0\Barley_Break.pdb
+D:\Microsoft Visual Studio\Projects\OP_2nd_Course\Course_work\Barley_Break\Barley_Break\obj\Debug\net6.0\Barley_Break.genruntimeconfig.cache
+D:\Microsoft Visual Studio\Projects\OP_2nd_Course\Course_work\Barley_Break\Barley_Break\obj\Debug\net6.0\ref\Barley_Break.dll
