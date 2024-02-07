@@ -8,11 +8,13 @@ namespace Barley_Break
         {
             Console.WriteLine("Hello, World!");
 
-            GameBoard board = new GameBoard();
+            GameBoard board = new DefaultBoard();
             board.PrintBoard();
-            string json = board.Clone();
-            board.Save(json);
+            board.Save();
             Console.WriteLine(board.Parse());
+
+            //GameBoard gameBoard = new DefaultBoardFactory().CreateBoard();
+            //gameBoard.PrintBoard();
         }
     }
 }

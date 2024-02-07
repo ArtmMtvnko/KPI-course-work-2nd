@@ -4,6 +4,8 @@
     {
         string Clone();
 
-        void Save(string json);
+        void Save();
+
+        string Parse();
     }
 }

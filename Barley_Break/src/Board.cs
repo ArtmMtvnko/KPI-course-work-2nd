@@ -2,14 +2,44 @@
 
 namespace Barley_Break.src
 {
-    internal class GameBoard : BoardPrototype
+    abstract class GameBoard : BoardPrototype
     {
-        private const string _path = "D:\\Microsoft Visual Studio\\Projects\\OP_2nd_Course\\Course_work\\Barley_Break\\Barley_Break\\data\\save.json";
+        protected const string _path = "D:\\Microsoft Visual Studio\\Projects\\OP_2nd_Course\\Course_work\\Barley_Break\\Barley_Break\\data\\save.json";
 
-        private List<List<int>> _board;
+        protected List<List<int>> _board;
 
-        public List<List<int>> Board  => _board;
-        public GameBoard()
+        public List<List<int>> Board => _board;
+
+        public abstract string Clone();
+
+        public abstract string Parse();
+
+        public abstract void Save();
+
+        public void PrintBoard()
+        {
+            foreach (List<int> list in _board)
+            {
+                foreach (int number in list)
+                {
+                    if (number < 10)
+                    {
+                        Console.Write(" {0} ", number);
+                    }
+                    else
+                    {
+                        Console.Write("{0} ", number);
+                    }
+                }
+                Console.WriteLine();
+            }
+        }
+    }
+
+
+    internal class DefaultBoard : GameBoard
+    {
+        public DefaultBoard()
         {
             _board = new List<List<int>>();
             _board.Add(new List<int>() { 1, 2, 3, 4 });
@@ -18,20 +48,23 @@ namespace Barley_Break.src
             _board.Add(new List<int>() { 13, 14, 15, 0 });
         }
 
-        public string Clone()
+        // TODO: Review posibility of moving up Clone(), Save(), Parse() to parent class
+
+        public override string Clone()
         {
             return JsonSerializer.Serialize(this);
         }
 
-        public void Save(string json)
+        public override void Save()
         {
+            string json = JsonSerializer.Serialize(this);
             using (StreamWriter sr = new StreamWriter(_path))
             {
                 sr.WriteLine(json);
             }
         }
         // TODO: move path in parametrs in methods to avoid hardcoding
-        public string Parse()
+        public override string Parse()
         {
             using (StreamReader sr = new StreamReader(_path))
             {
@@ -44,18 +77,6 @@ namespace Barley_Break.src
                 }
 
                 return output;
-            }
-        }
-
-        public void PrintBoard()
-        {
-            foreach (List<int> list in _board)
-            {
-                foreach (int number in list)
-                {
-                    Console.Write("{0} ", number);
-                }
-                Console.WriteLine();
             }
         }
     }
