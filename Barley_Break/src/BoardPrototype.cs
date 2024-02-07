@@ -1,6 +1,6 @@
 ﻿namespace Barley_Break.src
 {
-    internal interface BoardPrototype
+    internal interface IBoardPrototype
     {
         string Clone();
 

@@ -2,13 +2,15 @@
 
 namespace Barley_Break.src
 {
-    abstract class GameBoard : BoardPrototype
+    abstract class GameBoard : IBoardPrototype, IObserve
     {
         protected const string _path = "D:\\Microsoft Visual Studio\\Projects\\OP_2nd_Course\\Course_work\\Barley_Break\\Barley_Break\\data\\save.json";
 
         protected List<List<int>> _board;
 
         public List<List<int>> Board => _board;
+
+        private List<IObserver> _observers = new List<IObserver>();
 
         public string Clone()
         {
@@ -42,20 +44,55 @@ namespace Barley_Break.src
 
         public void PrintBoard()
         {
+            //foreach (List<int> list in _board)
+            //{
+            //    foreach (int number in list)
+            //    {
+            //        if (number < 10)
+            //        {
+            //            Console.Write(" {0} ", number);
+            //        }
+            //        else
+            //        {
+            //            Console.Write("{0} ", number);
+            //        }
+            //    }
+            //    Console.WriteLine();
+            //}
+
             foreach (List<int> list in _board)
             {
                 foreach (int number in list)
                 {
                     if (number < 10)
                     {
-                        Console.Write(" {0} ", number);
+                        Console.Write(" {0} |", number);
                     }
                     else
                     {
-                        Console.Write("{0} ", number);
+                        Console.Write("{0} |", number);
                     }
                 }
                 Console.WriteLine();
+                Console.WriteLine(new String('-', 20));
+            }
+        }
+
+        public void Attach(IObserver observer)
+        {
+            _observers.Add(observer);
+        }
+
+        public void Detach(IObserver observer)
+        {
+            _observers.Remove(observer);
+        }
+
+        public void Notify()
+        {
+            foreach (IObserver observer in _observers)
+            {
+                observer.Update(this);
             }
         }
     }

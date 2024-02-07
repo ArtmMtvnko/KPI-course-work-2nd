@@ -2,12 +2,12 @@
 
 namespace Barley_Break.src
 {
-    internal interface BoardFactory
+    internal interface IBoardFactory
     {
         GameBoard CreateBoard();
     }
 
-    class DefaultBoardFactory : BoardFactory
+    class DefaultBoardFactory : IBoardFactory
     {
         public GameBoard CreateBoard()
         {

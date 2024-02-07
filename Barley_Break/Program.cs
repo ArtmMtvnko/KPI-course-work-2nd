@@ -15,6 +15,9 @@ namespace Barley_Break
 
             GameBoard gameBoard = new DefaultBoardFactory().CreateBoard();
             gameBoard.PrintBoard();
+
+            gameBoard.Attach(new MoveObserver());
+            gameBoard.Notify();
         }
     }
 }
