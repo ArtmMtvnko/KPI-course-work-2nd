@@ -18,6 +18,21 @@ namespace Barley_Break
 
             gameBoard.Attach(new MoveObserver());
             gameBoard.Notify();
+
+            DefaulBoardController controller = new DefaulBoardController();
+            controller.SetBoard(gameBoard);
+
+            Console.WriteLine("-----");
+            controller.Move(3, 2);
+            gameBoard.PrintBoard();
+            Console.WriteLine("-----");
+            controller.Move(2, 2);
+            gameBoard.PrintBoard();
+            Console.WriteLine("-----");
+            controller.Move(1, 1);
+            gameBoard.PrintBoard();
+            Console.WriteLine("-----");
+            Thread.Sleep(200);
         }
     }
 }

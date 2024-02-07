@@ -44,37 +44,20 @@ namespace Barley_Break.src
 
         public void PrintBoard()
         {
-            //foreach (List<int> list in _board)
-            //{
-            //    foreach (int number in list)
-            //    {
-            //        if (number < 10)
-            //        {
-            //            Console.Write(" {0} ", number);
-            //        }
-            //        else
-            //        {
-            //            Console.Write("{0} ", number);
-            //        }
-            //    }
-            //    Console.WriteLine();
-            //}
-
             foreach (List<int> list in _board)
             {
                 foreach (int number in list)
                 {
                     if (number < 10)
                     {
-                        Console.Write(" {0} |", number);
+                        Console.Write(" {0} ", number);
                     }
                     else
                     {
-                        Console.Write("{0} |", number);
+                        Console.Write("{0} ", number);
                     }
                 }
                 Console.WriteLine();
-                Console.WriteLine(new String('-', 20));
             }
         }
 
@@ -95,11 +78,16 @@ namespace Barley_Break.src
                 observer.Update(this);
             }
         }
+
+        public abstract void Move(int fromX, int fromY, int toX, int toY);
     }
 
 
     internal class DefaultBoard : GameBoard
     {
+        public int VerticalSize { get; } = 4;
+        public int HorisontalSize { get; } = 4;
+
         public DefaultBoard()
         {
             _board = new List<List<int>>();
@@ -112,6 +100,15 @@ namespace Barley_Break.src
         public DefaultBoard(string json)
         {
             _board = JsonSerializer.Deserialize<List<List<int>>>(json);
+        }
+
+        public override void Move(int fromX, int fromY, int toX, int toY)
+        {
+            Console.WriteLine("I am moving");
+            int temp = _board[toY][toX];
+            _board[toY][toX] = _board[fromY][fromX];
+            _board[fromY][fromX] = temp;
+            Notify();
         }
 
         // TODO: move path in parametrs in methods to avoid hardcoding
