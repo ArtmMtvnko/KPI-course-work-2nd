@@ -23,8 +23,7 @@ namespace Barley_Break.src
                 }
             }
             Console.WriteLine(json);
-            var a = JsonSerializer.Deserialize<DefaultBoard>(json);
-            return a;
+            return new DefaultBoard(json);
         }
     }
 }

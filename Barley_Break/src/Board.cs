@@ -10,11 +10,35 @@ namespace Barley_Break.src
 
         public List<List<int>> Board => _board;
 
-        public abstract string Clone();
+        public string Clone()
+        {
+            return JsonSerializer.Serialize(this);
+        }
 
-        public abstract string Parse();
+        public void Save()
+        {
+            string json = JsonSerializer.Serialize(this._board);
+            using (StreamWriter sr = new StreamWriter(_path))
+            {
+                sr.WriteLine(json);
+            }
+        }
 
-        public abstract void Save();
+        public string Parse()
+        {
+            using (StreamReader sr = new StreamReader(_path))
+            {
+                string output = String.Empty;
+                string line;
+
+                while ((line = sr.ReadLine()) != null)
+                {
+                    output += line;
+                }
+
+                return output;
+            }
+        }
 
         public void PrintBoard()
         {
@@ -48,36 +72,11 @@ namespace Barley_Break.src
             _board.Add(new List<int>() { 13, 14, 15, 0 });
         }
 
-        // TODO: Review posibility of moving up Clone(), Save(), Parse() to parent class
-
-        public override string Clone()
+        public DefaultBoard(string json)
         {
-            return JsonSerializer.Serialize(this);
+            _board = JsonSerializer.Deserialize<List<List<int>>>(json);
         }
 
-        public override void Save()
-        {
-            string json = JsonSerializer.Serialize(this);
-            using (StreamWriter sr = new StreamWriter(_path))
-            {
-                sr.WriteLine(json);
-            }
-        }
         // TODO: move path in parametrs in methods to avoid hardcoding
-        public override string Parse()
-        {
-            using (StreamReader sr = new StreamReader(_path))
-            {
-                string output = String.Empty;
-                string line;
-
-                while ((line = sr.ReadLine()) != null)
-                {
-                    output += line;
-                }
-
-                return output;
-            }
-        }
     }
 }
