@@ -80,6 +80,16 @@ namespace Barley_Break.src
         }
 
         public abstract void Move(int fromX, int fromY, int toX, int toY);
+
+        public IMemento CreateBackup()
+        {
+            return new CurrentBoardMemento(this);
+        }
+
+        public void Restore(IMemento memento)
+        {
+            _board = memento.State;
+        }
     }
 
 

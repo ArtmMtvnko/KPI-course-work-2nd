@@ -8,6 +8,9 @@
 
         public override void Move(int x, int y, int toX = 0, int toY = 0)
         {
+            // TODO: Add exeption or messege if none of checks weren't pass
+
+            // TODO: Add handle for impossible move
             if (_board.Board[y][x] == 0)
             {
                 throw new Exception();
