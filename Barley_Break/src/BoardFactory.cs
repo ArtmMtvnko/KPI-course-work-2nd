@@ -9,11 +9,13 @@ namespace Barley_Break.src
 
     class DefaultBoardFactory : IBoardFactory
     {
+        private const string _path = "D:\\Microsoft Visual Studio\\Projects\\OP_2nd_Course\\Course_work\\Barley_Break\\Barley_Break\\data\\save.json";
+
         public GameBoard CreateBoard()
         {
             string json = String.Empty;
 
-            using (StreamReader sr = new StreamReader("D:\\Microsoft Visual Studio\\Projects\\OP_2nd_Course\\Course_work\\Barley_Break\\Barley_Break\\data\\save.json"))
+            using (StreamReader sr = new StreamReader(_path))
             {
                 string line;
 
