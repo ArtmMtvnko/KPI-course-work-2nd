@@ -73,6 +73,7 @@ namespace Barley_Break.src
                     }
                     Console.WriteLine();
                 }
+                Console.WriteLine("----------");
             }
         }
     }
