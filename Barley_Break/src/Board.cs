@@ -114,6 +114,7 @@ namespace Barley_Break.src
 
         public override void Move(int fromX, int fromY, int toX, int toY)
         {
+            // TODO: may be move backup caretaker here and save snapshot before we move elements
             Console.WriteLine("I am moving");
             int temp = _board[toY][toX];
             _board[toY][toX] = _board[fromY][fromX];

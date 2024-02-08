@@ -3,14 +3,14 @@
     internal class DefaulBoardController : GameBoard
     {
         private GameBoard _board;
-        private Caretaker _backupCaretaker;
+        private BackupCaretaker _backupCaretaker;
 
         public void SetBoard(GameBoard board) { _board = board; }
 
         public DefaulBoardController(GameBoard board)
         {
             _board = board;
-            _backupCaretaker = new Caretaker(board);
+            _backupCaretaker = new BackupCaretaker(board);
         }
 
         public override void Move(int x, int y, int toX = 0, int toY = 0)

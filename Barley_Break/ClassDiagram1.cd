@@ -12,7 +12,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Barley_Break.src.DefaultBoard" Collapsed="true">
-    <Position X="4.5" Y="7.5" Width="1.5" />
+    <Position X="7.25" Y="5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAIAAAAAgAAAAAAAAAAAAAAAAAABAAAAAAAA=</HashCode>
       <FileName>src\Board.cs</FileName>
@@ -21,21 +21,21 @@
   <Class Name="Barley_Break.src.DefaultBoardFactory" Collapsed="true" BaseTypeListCollapsed="true">
     <Position X="6.25" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAA=</HashCode>
       <FileName>src\BoardFactory.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Barley_Break.src.CurrentBoardMemento" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="3.5" Y="5" Width="1.5" />
+    <Position X="1.75" Y="5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>src\Memento.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="Barley_Break.src.Caretaker" Collapsed="true">
-    <Position X="3.5" Y="3" Width="1.5" />
+  <Class Name="Barley_Break.src.BackupCaretaker" Collapsed="true">
+    <Position X="1.75" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AgAAAQAAAAAABAgAAAAAAAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
       <FileName>src\Memento.cs</FileName>
@@ -56,13 +56,14 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Barley_Break.src.DefaulBoardController" Collapsed="true">
-    <Position X="8" Y="7.5" Width="1.5" />
+    <Position X="5" Y="5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAIAIAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAIAAAAAIAIBAAAEAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
       <FileName>src\Proxy.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Field Name="_board" />
+      <Field Name="_backupCaretaker" />
     </ShowAsAssociation>
   </Class>
   <Class Name="Barley_Break.Program" Collapsed="true">
@@ -87,7 +88,7 @@
     </TypeIdentifier>
   </Interface>
   <Interface Name="Barley_Break.src.IMemento" Collapsed="true">
-    <Position X="3.5" Y="4" Width="1.5" />
+    <Position X="1.75" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>src\Memento.cs</FileName>
