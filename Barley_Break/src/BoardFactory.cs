@@ -1,6 +1,4 @@
-﻿using System.Text.Json;
-
-namespace Barley_Break.src
+﻿namespace Barley_Break.src
 {
     internal interface IBoardFactory
     {

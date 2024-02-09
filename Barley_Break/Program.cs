@@ -1,5 +1,4 @@
 ﻿using Barley_Break.GUI;
-using Barley_Break.src;
 
 namespace Barley_Break
 {

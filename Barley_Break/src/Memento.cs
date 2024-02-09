@@ -37,7 +37,7 @@ namespace Barley_Break.src
             {
                 _mementos.RemoveAt(0);
                 _mementos.Add(_gameBoard.CreateBackup());
-            } 
+            }
             else
             {
                 _mementos.Add(_gameBoard.CreateBackup());
@@ -53,7 +53,7 @@ namespace Barley_Break.src
 
             _gameBoard.Restore(last);
         }
-        
+
         public void ShowHistory()
         {
             foreach (IMemento memento in _mementos)

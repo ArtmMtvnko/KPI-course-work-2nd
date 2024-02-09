@@ -30,7 +30,7 @@ namespace Barley_Break.GUI
                     string moveInput = Console.ReadLine().Trim();
 
                     if (moveInput == "") continue;
-                    if (moveInput == "q") break;
+                    if (moveInput == "q") return;
                     if (moveInput == "z")
                     {
                         controller.Undo();
@@ -48,12 +48,12 @@ namespace Barley_Break.GUI
                     Thread.Sleep(3000);
                     continue;
                 }
-                
+
             }
 
             Console.Clear();
             gameBoard.PrintBoard();
-            Console.WriteLine("\nYou won!!!");
+            Console.WriteLine("\nYou win!!!");
             Thread.Sleep(3000);
             Console.WriteLine("\nPress any key to exit");
             Console.ReadKey();
@@ -82,7 +82,7 @@ namespace Barley_Break.GUI
                     string moveInput = Console.ReadLine().Trim();
 
                     if (moveInput == "") continue;
-                    if (moveInput == "q") break;
+                    if (moveInput == "q") return;
                     if (moveInput == "z")
                     {
                         controller.Undo();
@@ -105,7 +105,7 @@ namespace Barley_Break.GUI
 
             Console.Clear();
             gameBoard.PrintBoard();
-            Console.WriteLine("\nYou won!!!");
+            Console.WriteLine("\nYou win!!!");
             Thread.Sleep(3000);
             Console.WriteLine("\nPress any key to exit");
             Console.ReadKey();

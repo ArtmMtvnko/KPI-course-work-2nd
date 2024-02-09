@@ -69,7 +69,7 @@ namespace Barley_Break.src
             for (int i = 0; i < size; i++)
             {
                 for (int j = 0; j < size; j++)
-                 {
+                {
                     if (_board[i][j] != (i * size + j + 1))
                     {
                         if (_board[size - 1][size - 1] == lastEmptySquare)
@@ -118,18 +118,27 @@ namespace Barley_Break.src
 
     internal class DefaultBoard : GameBoard
     {
-        //public int VerticalSize { get; } = 4;
-
-        //public int HorisontalSize { get; } = 4;
-
-        // TODO: Make random generation
         public DefaultBoard()
         {
             _board = new List<List<int>>();
-            _board.Add(new List<int>() { 1, 2, 3, 4 });
-            _board.Add(new List<int>() { 5, 6, 7, 8 });
-            _board.Add(new List<int>() { 9, 10, 11, 12 });
-            _board.Add(new List<int>() { 13, 14, 0, 15 });
+
+            Random random = new Random();
+
+            List<int> numbers = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 0 };
+
+            for (int i = 0; i < numbers.Count; i++)
+            {
+                int randomIndex = random.Next(i, numbers.Count);
+
+                int temp = numbers[i];
+                numbers[i] = numbers[randomIndex];
+                numbers[randomIndex] = temp;
+            }
+
+            _board.Add(new List<int>() { numbers[0], numbers[1], numbers[2], numbers[3] });
+            _board.Add(new List<int>() { numbers[4], numbers[5], numbers[6], numbers[7] });
+            _board.Add(new List<int>() { numbers[8], numbers[9], numbers[10], numbers[11] });
+            _board.Add(new List<int>() { numbers[12], numbers[13], numbers[14], numbers[15] });
         }
 
         public DefaultBoard(string json)
