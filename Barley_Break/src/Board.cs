@@ -72,7 +72,7 @@ namespace Barley_Break.src
                 {
                     if (_board[i][j] != (i * size + j + 1))
                     {
-                        if (_board[size - 1][size - 1] == lastEmptySquare)
+                        if (_board[size - 1][size - 1] == lastEmptySquare && i == size - 1 && j == size - 1)
                         {
                             return true;
                         }

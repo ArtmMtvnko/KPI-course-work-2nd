@@ -15,6 +15,8 @@
 
         public override void Move(int x, int y, int toX = 0, int toY = 0)
         {
+            x -= 1;
+            y -= 1;
             if (_board.Board[y][x] == 0)
             {
                 throw new Exception("You try to move empty square");
