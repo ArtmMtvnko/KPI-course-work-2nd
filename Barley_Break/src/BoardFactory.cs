@@ -7,7 +7,7 @@ namespace Barley_Break.src
         GameBoard CreateBoard();
     }
 
-    class DefaultBoardFactory : IBoardFactory
+    class SavedBoardFactory : IBoardFactory
     {
         private const string _path = "D:\\Microsoft Visual Studio\\Projects\\OP_2nd_Course\\Course_work\\Barley_Break\\Barley_Break\\data\\save.json";
 
@@ -26,6 +26,14 @@ namespace Barley_Break.src
             }
             Console.WriteLine(json);
             return new DefaultBoard(json);
+        }
+    }
+
+    class BoardFactory : IBoardFactory
+    {
+        public GameBoard CreateBoard()
+        {
+            return new DefaultBoard();
         }
     }
 }
