@@ -15,11 +15,6 @@
 
         public override void Move(int x, int y, int toX = 0, int toY = 0)
         {
-            
-            // TODO: Add exeption or messege if none of checks weren't pass
-            // TODO: If turn won't pass - do NOT create backup.
-
-            // TODO: Add handle for impossible move
             if (_board.Board[y][x] == 0)
             {
                 throw new Exception("You try to move empty square");

@@ -53,7 +53,7 @@ namespace Barley_Break.src
 
             _gameBoard.Restore(last);
         }
-        // TODO: create private var BackupCaretaker in Controller (new BackupCaretaker make in constructor of controller)
+        
         public void ShowHistory()
         {
             foreach (IMemento memento in _mementos)

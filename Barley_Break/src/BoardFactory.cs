@@ -24,7 +24,7 @@ namespace Barley_Break.src
                     json += line;
                 }
             }
-            Console.WriteLine(json);
+
             return new DefaultBoard(json);
         }
     }

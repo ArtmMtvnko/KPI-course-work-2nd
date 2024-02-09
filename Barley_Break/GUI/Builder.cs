@@ -29,26 +29,4 @@
             return result;
         }
     }
-
-    class GameMenuBuilder : IBuilder
-    {
-        private Menu _menu = new Menu();
-
-        public GameMenuBuilder() => Reset();
-        public void Reset() => _menu = new Menu();
-
-        public void BuildMenu()
-        {
-            _menu.AddMenuItem("q", new MockCommand());
-        }
-
-        public Menu GetMenu()
-        {
-            Menu result = _menu;
-
-            Reset();
-
-            return result;
-        }
-    }
 }

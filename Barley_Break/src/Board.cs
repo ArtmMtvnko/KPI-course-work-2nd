@@ -61,6 +61,29 @@ namespace Barley_Break.src
             }
         }
 
+        public bool IsGameEnded()
+        {
+            int size = _board.Count;
+            int lastEmptySquare = 0;
+
+            for (int i = 0; i < size; i++)
+            {
+                for (int j = 0; j < size; j++)
+                 {
+                    if (_board[i][j] != (i * size + j + 1))
+                    {
+                        if (_board[size - 1][size - 1] == lastEmptySquare)
+                        {
+                            return true;
+                        }
+                        return false;
+                    }
+                }
+            }
+
+            return true;
+        }
+
         public void Attach(IObserver observer)
         {
             _observers.Add(observer);
@@ -95,16 +118,18 @@ namespace Barley_Break.src
 
     internal class DefaultBoard : GameBoard
     {
-        public int VerticalSize { get; } = 4;
-        public int HorisontalSize { get; } = 4;
+        //public int VerticalSize { get; } = 4;
 
+        //public int HorisontalSize { get; } = 4;
+
+        // TODO: Make random generation
         public DefaultBoard()
         {
             _board = new List<List<int>>();
             _board.Add(new List<int>() { 1, 2, 3, 4 });
             _board.Add(new List<int>() { 5, 6, 7, 8 });
             _board.Add(new List<int>() { 9, 10, 11, 12 });
-            _board.Add(new List<int>() { 13, 14, 15, 0 });
+            _board.Add(new List<int>() { 13, 14, 0, 15 });
         }
 
         public DefaultBoard(string json)
@@ -115,13 +140,10 @@ namespace Barley_Break.src
         public override void Move(int fromX, int fromY, int toX, int toY)
         {
             // TODO: may be move backup caretaker here and save snapshot before we move elements
-            Console.WriteLine("I am moving");
             int temp = _board[toY][toX];
             _board[toY][toX] = _board[fromY][fromX];
             _board[fromY][fromX] = temp;
             Notify();
         }
-
-        // TODO: move path in parametrs in methods to avoid hardcoding
     }
 }
